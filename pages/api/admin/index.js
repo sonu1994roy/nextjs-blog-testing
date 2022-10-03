@@ -40,7 +40,7 @@ const Login = async(req, res)=>{
     }
 
     else{
-      return   res.status(405).json({error: "server eroor"}).end()
+      return   res.status(405).json({error: "server eroor"})
     }
 }
 export default connectDb( Login);

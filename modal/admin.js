@@ -78,7 +78,7 @@ adminschema.pre("save" || "update",async function(next){
    if (this.isModified("password")) {
     // const passwordHasing = await bcrypt.hash(Password, 5);
     this.password= await bcrypt.hash(this.password, 5);
-    console.log(`the crunet password is ${this.password}`);
+
 
    }
     next()

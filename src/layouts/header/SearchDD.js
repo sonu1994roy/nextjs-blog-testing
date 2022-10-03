@@ -17,7 +17,7 @@ const SearchDD = () => {
   const [dataSerch, setdataSerch] = useState([])
   useEffect(() => {
       const getItems = async () => {
-          const res = await fetch(`http://localhost:3000/api/getitem`)
+          const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL}/api/getitem`)
           const data = await res.json()
           setserch(data.itms)
       };

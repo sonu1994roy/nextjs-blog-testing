@@ -23,7 +23,7 @@ const handler = Auth( async (req, res) => {
     const { Name, surname, userid, email,  adress1, adress2, phone1, phone2, img, whatsaap, c, fasebook, twiter, instagram, linkedin } = req.body
 
     if (req.method == 'POST') {
-        console.log(req.body);
+    
          if( !Name || !surname || !userid || !email || !adress1 || !adress2 || !phone1 || !whatsaap || !c ){
             return res.status(422).json({ error: "please fill proper" })
          }
@@ -37,7 +37,9 @@ const handler = Auth( async (req, res) => {
         if (!domatch) {
             return res.status(401).json({ error: "Not verify Password " })
         }
-        console.log(domatch);
+    
+
+
 
         try {
             let p = await items.findByIdAndUpdate(Id._id,
@@ -63,7 +65,7 @@ const handler = Auth( async (req, res) => {
                     }
                 }
             )
-            console.log(p);
+           
             
         } catch (error) {
             return res.status(404).json({ error: error.message })

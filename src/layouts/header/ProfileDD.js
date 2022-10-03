@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import FeatherIcon from "feather-icons-react";
 import Image from "next/image";
-import userimg from "../../../public/img/logo10.png";
+import userimg from "../../../public/img/1.jpg";
 import {useRouter}  from "next/router";
 import Cookies from 'js-cookie'
 import {
@@ -53,8 +53,8 @@ const ProfileDD = () => {
           <Image
             src={userimg}
             alt={userimg}
-            width="30"
-            height="30"
+            width="20"
+            height="20"
             className="roundedCircle"
           />
           <Box

@@ -11,14 +11,18 @@ function Adminlogin() {
   const [userid, setusername] = useState("")
   const [password, setpassword] = useState("")
   const router = useRouter()
-
+  // const {token} = parseCookies()
+  //  if (token) {
+  //   alert("your are already login in lobby ")
+  //   router.push("/admin")
+  //  }
   const userLogin = async (e) => {
     e.preventDefault()
     const data = {
       userid,
       password
     }
-    const res = await fetch(`http://localhost:3000/api/admin`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/admin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -111,7 +115,7 @@ export async function getServerSideProps(ctx) {
   const {token}= parseCookies(ctx)
   if (token ) {
       const {res} = ctx
-      res.writeHead(302,{Location:"/"})
+      res.writeHead(302,{Location:"/admin"})
       res.end()
   }
   return{

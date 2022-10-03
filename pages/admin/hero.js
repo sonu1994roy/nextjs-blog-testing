@@ -63,7 +63,7 @@ export default function Acount(props) {
   }
   // const UpdateUser = async () => {some cahnege 
   //   try {
-  //     const res = await fetch(`http://localhost:3000/api/user`, {
+  //     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/user`, {
   //       method: 'POST',
   //       headers: {
   //         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export default function Acount(props) {
  
   const UpdateUser = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/profile`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -176,7 +176,7 @@ const handleSubmit1 = async () => {
 }
 const UpdatePassword = async () => {
   try {
-    const res = await fetch(`http://localhost:3000/api/changePassW`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/changePassW`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -185,7 +185,6 @@ const UpdatePassword = async () => {
       body: JSON.stringify(Userpassword)
     })
     let res2 = await res.json()
-    console.log(res2.error)
     if (res2.error) {
       toast.error(res2.error, {
           position: "top-center",
@@ -652,7 +651,7 @@ pauseOnHover={false}
 
 export async function getServerSideProps(ctx) {
   const { token, user } = parseCookies(ctx)
-  console.log(user);
+
   if (!token) {
     const { res } = ctx                // return { props: { user:null }, will be passed to the page component as props for not login}
     res.writeHead(302, { Location: "/athouticate" })

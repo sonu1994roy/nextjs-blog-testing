@@ -42,7 +42,7 @@ const handler = Auth( async (req, res) => {
            if (!verfy) {
             return res.status(401).json({error:"Not verify Credential "})
            }
-    console.log(verfy);
+
                const hashPassword= await bcrypt.hash(Newpassword, 5);
             let p = await items.findByIdAndUpdate(Id._id, 
                 {

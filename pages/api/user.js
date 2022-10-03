@@ -24,7 +24,7 @@ const creatNewItems = async (req, res,) => {
     const {  Name,surname, userid, email,password,  adress1, adress2, phone1,phone2,img, whatsaap, fasebook, twiter, instagram, linkedin} = req.body
         if (req.method == 'POST') {
         const item = await items.findOne({userid:userid});
-        console.log(item);
+      
         if (item) {
             return res.status(422).json({ error: "Already exist items " })
         }
@@ -52,7 +52,7 @@ const creatNewItems = async (req, res,) => {
                       linkedin
                  }
                 })
-            console.log(p);
+            
             await p.save()
         } catch (error) {
             return res.status(404).json({ error: error.message})

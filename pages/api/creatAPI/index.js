@@ -31,7 +31,7 @@ const creatNewItems = Auth( async (req, res,) => {
         }
         try {
             let p = new items({title,slug,msg1,img,storylink,msg2,price, desc, type, catogery})
-            console.log(p);
+          
             await p.save()
         } catch (error) {
             return res.status(404).json({ error: error.message})

@@ -31,30 +31,39 @@ export default function Index(props) {
 
     const router = useRouter()
     const [items, setitems] = useState(props.itms)
-    console.log(items);
     const [Copied, setCopied] = useState(false)
 
     if (items.length === 0) {
         return (
-            <Grid container spacing={0}>
-                <Grid item xs={12} lg={12}>
-                    <div className="card-body" >
-                        <h2>No Any Subscribr Email Id  </h2>
+            <ThemeProvider theme={theme}>
+                <FullLayout>
+                    <Grid container spacing={0}>
+                        <Grid item xs={12} lg={12}>
 
-                        <Button onClick={() => router.push('/admin')} type="submit" variant="contained" mt={2}>
-                            Go Back
-                        </Button>
+                            <BaseCard title="Subscriber Email">
+                                <div className="card-body" >
+                                    <h2>No Any Subscribr Email Id  </h2>
 
-                    </div>
-                </Grid>
-            </Grid>
+                                    <Button onClick={() => router.push('/admin')} type="submit" variant="contained" mt={2}>
+                                        Go Back
+                                    </Button>
+
+                                </div>
+                            </BaseCard>
+
+                        </Grid>
+                        {/* ------------------------- row 1 ------------------------- */}
+                    </Grid>
+
+                </FullLayout>
+            </ThemeProvider>
         )
     }
     return (
         <>
             <ThemeProvider theme={theme}>
                 <FullLayout>
-                    <Grid container  spacing={0}>
+                    <Grid container spacing={0}>
                         <Grid item xs={12} lg={12}>
 
                             <BaseCard title="Subscriber Email">
@@ -129,7 +138,7 @@ export default function Index(props) {
                                                             <CopyToClipboard
                                                                 text={product.Subscribe}
                                                                 onCopy={() => toast.success("Copied")}>
-                                                                    <FeatherIcon style={{cursor: "pointer"}}  icon="copy" width="20" height="20" />
+                                                                <FeatherIcon style={{ cursor: "pointer" }} icon="copy" width="20" height="20" />
 
                                                             </CopyToClipboard>
                                                         </Box>
@@ -141,20 +150,20 @@ export default function Index(props) {
                                     </TableBody>
                                 </Table>
                             </BaseCard>
-                            
+
                         </Grid>
                         {/* ------------------------- row 1 ------------------------- */}
                     </Grid>
                     <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover={false} />
+                        position="top-center"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover={false} />
                 </FullLayout>
             </ThemeProvider>
         </>
@@ -162,10 +171,10 @@ export default function Index(props) {
     );
 }
 export async function getServerSideProps(ctx) {
-    const {token}= parseCookies(ctx)
-    if (!token ) {
-        const {res} = ctx
-        res.writeHead(302,{Location:"/athouticate"})
+    const { token } = parseCookies(ctx)
+    if (!token) {
+        const { res } = ctx
+        res.writeHead(302, { Location: "/athouticate" })
         res.end()
     }
     if (!mongoose.connections[0].readyState) {

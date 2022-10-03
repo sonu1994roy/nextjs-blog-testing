@@ -64,8 +64,8 @@ const Poeam = ({ itms }) => {
                         <p >{data.desc.slice(0,40)}..</p>
                       </div>
                       <div className="footer-card">
-                        <Link href={`/series/${data.slug}`}><a className="waves-effect waves-light btn" >Read More</a></Link>
-                        <p className="txt3"><i className="far fa-clock"></i>{formattedDate} </p>
+                        <Link href={`/series/${data.slug}`} passHref><a className="waves-effect waves-light btn" >Read More</a></Link>
+                        <p className="txt3">{formattedDate} </p>
                       </div>
                     </div>
                   </a>

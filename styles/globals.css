@@ -2857,8 +2857,8 @@ a {
   .whatsaap-chat {
     position: fixed;
     /* display: none; */
-    right: 50px;
-    bottom: 45px;
+    right: 55px;
+    bottom: 65px;
     z-index: 10;
   }
   .whatsaap-chat .btn.btn-primary {

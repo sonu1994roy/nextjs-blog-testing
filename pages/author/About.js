@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image } from "next/image";
+
 
 function About() {
     return (
@@ -25,13 +25,13 @@ function About() {
                                 <p>This website contains stories plays and poems that enhance the life experience of children. Most of the material given here touches on different aspects of life. While on the one hand it will take the children closer to nature and make them aware of nature conservation on the other hand they will increase their knowledge as well as entertain them</p>
                             </div>
                             <div className="col-lg-6 col-md-6">
-                                <Image src="/img/ch2.jpg" alt="" className="img-fluid rounded" />
+                                <img src="/img/chield.jpg" alt="" className="img-fluid rounded" />
                             </div>
                         </div>
 
                         <div className="row mt-5">
                             <div className="col-lg-6 col-md-6">
-                                <Image src="/img/img3.jpg" alt="" className="img-fluid rounded" />
+                                <img src="/img/img3.jpg" alt="" className="img-fluid rounded" />
                             </div>
                             <div className="col-lg-6 col-md-6">
                                 <h2 className="mb-4">हमारा विशेष कार्य</h2>

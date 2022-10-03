@@ -1,10 +1,11 @@
 
 import React from 'react'
-import { Link } from "next/link";
+import  {useRouter}  from "next/router";
 function Servicess() {
+	const router = useRouter()
 	return (
-		<div>
-			<section className="page-title bg-1">
+		<>
+		<section className="page-title bg-1">
 				<div className="container ">
 					<div className="row">
 						<div className="col-md-12">
@@ -22,7 +23,7 @@ function Servicess() {
 					<div className="row mt-5">
 						<div className="col-lg-6">
 							<div className="service-img mb-5 mb-lg-0">
-								<img src="/img/service-1.jpg" alt="" className="img-fluid" />
+								<img src="/img/img3.jpg" alt="" className="img-fluid" />
 							</div>
 						</div>
 						<div className="col-lg-6">
@@ -50,7 +51,7 @@ function Servicess() {
 							</div>
 							<div className="col-lg-6">
 								<div className="service-img">
-									<img src="/img/service-3.jpg" alt="" className="img-fluid" />
+									<img src="/img/img5.jpg" alt="" className="img-fluid" />
 								</div>
 							</div>
 						</div>
@@ -59,7 +60,7 @@ function Servicess() {
 					<div className="row">
 						<div className="col-lg-6">
 							<div className="service-img mb-5 mb-lg-0">
-								<img src="/img/service-4.jpg" alt="" className="img-fluid" />
+								<img src="/img/img6.jpg" alt="" className="img-fluid" />
 							</div>
 						</div>
 						<div className="col-lg-6">
@@ -91,8 +92,6 @@ function Servicess() {
 				</div>
 			</section>
 
-
-
 			<section className="cta-2 bg-light">
 				<div className="container">
 					<div className="cta-block py-5">
@@ -102,14 +101,15 @@ function Servicess() {
 								<h2 className="mt-2 mb-4 mb-lg-0">हमारी सर्वश्रेष्ठ टीम को अपना प्रोजेक्ट सौंपें</h2>
 							</div>
 							<div className="col-lg-4">
-								<Link href="/author/contact"><a  className="btn btn-primrey btn-round-full float-lg-right">
-									संपर्क करें </a></Link>
+								<a style={{ cursor: "pointer" }} onClick={() => router.push("/author/contact")} className="btn btn-primrey btn-round-full float-lg-right">संपर्क करें </a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-		</div>
+		</>
+			
+		
 	)
 }
 

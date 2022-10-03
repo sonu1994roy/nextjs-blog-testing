@@ -16,7 +16,7 @@ function Slug(props, errors) {
 
     const [moreStory, setmoreStory] = useState(props.moreStory)
     const [rleateItem, setrleateItem] = useState(props.rleateItem)
-
+   
     if (items.catogery === "Books") {
         return (
             <>
@@ -138,7 +138,7 @@ function Slug(props, errors) {
                                                 <div key={data._id} className="post-block-wrapper post-float box ">
                                                     <div className=" post-thumbnail">
 
-                                                        <a href={`/series/${data.slug}`}>
+                                                        <a rel="noopener noreferrer" href={`/series/${data.slug}`}>
                                                             <img className="img-fluid h-75" src={data.img} alt="post-thumbnail" />
                                                         </a>
 
@@ -146,7 +146,7 @@ function Slug(props, errors) {
                                                     <div className="post-content">
                                                         <h2 className="post-title title-sm">
 
-                                                            <a href={`/series/${data.slug}`}>{data.title.slice(0, 30)}..</a>
+                                                            <a rel="noopener noreferrer" href={`/series/${data.slug}`}>{data.title.slice(0, 30)}..</a>
 
                                                         </h2>
                                                         <div className="post-meta">
@@ -231,7 +231,7 @@ function Slug(props, errors) {
 
                                                         <div className="post-thumbnail mb-0">
 
-                                                            <a href={`/series/${data.slug}`}>
+                                                            <a rel="noopener noreferrer" href={`/series/${data.slug}`}>
                                                                 <img className="img-fluid " style={{ width: "12rem ", height: "10rem" }} src={data.img} alt="post-thumbnail" />
                                                             </a>
 
@@ -240,12 +240,12 @@ function Slug(props, errors) {
                                                         <div className="post-content">
                                                             <div className="post-title title-sm mb-2">
 
-                                                                <a href={`/series/${data.slug}`} className="post-category">{data.title.slice(0, 20)}..</a>
+                                                                <a rel="noopener noreferrer" href={`/series/${data.slug}`} className="post-category">{data.title.slice(0, 20)}..</a>
 
                                                             </div>
-                                                            <h2 className="post-title title-sm">
+                                                            <h2 rel="noopener noreferrer" className="post-title title-sm">
 
-                                                                <a href={`/series/${data.slug}`}>{data.desc.slice(0, 50)}..</a>
+                                                                <a rel="noopener noreferrer" href={`/series/${data.slug}`}>{data.desc.slice(0, 50)}..</a>
 
                                                             </h2>
 
@@ -270,27 +270,8 @@ function Slug(props, errors) {
     }
 
 }
-export async function getServerSideProps(context) {
-    const { slug } = context.query
-    if (!mongoose.connections[0].readyState) {
-        await mongoose.connect(process.env.MONGO_URL)
-    }
-    let itms = await postitem.findOne({ slug: slug });
-    const rltdItms = itms.catogery
-    let rleateItem = await postitem.find({ catogery: rltdItms })
-    let moreStory = await postitem.find()
-    return {
-        props: {
-            itms: JSON.parse(JSON.stringify(itms)),
-            rleateItem: JSON.parse(JSON.stringify(rleateItem)),
-            moreStory: JSON.parse(JSON.stringify(moreStory)),
-        },
-        // will be passed to the page component as props
-    }
-}
-
-// export const getStaticProps = async (context) => {
-//     const { slug } = context.params
+// export async function getServerSideProps(context) {
+//     const { slug } = context.query
 //     if (!mongoose.connections[0].readyState) {
 //         await mongoose.connect(process.env.MONGO_URL)
 //     }
@@ -304,18 +285,37 @@ export async function getServerSideProps(context) {
 //             rleateItem: JSON.parse(JSON.stringify(rleateItem)),
 //             moreStory: JSON.parse(JSON.stringify(moreStory)),
 //         },
-//     };
-// };
-// export const getStaticPaths = async () => {
-
-//     if (!mongoose.connections[0].readyState) {
-//         await mongoose.connect(process.env.MONGO_URL)
+//         // will be passed to the page component as props
 //     }
-//     let data = await postitem.find();
-//     const paths = data.map((curEle) => ({ params: { slug: curEle.slug.toString() } }));
-//     return {
-//         paths,
-//         fallback: false,
-//     };
-// };
+// }
+
+export const getStaticProps = async (context) => {
+    const { slug } = context.params
+    if (!mongoose.connections[0].readyState) {
+        await mongoose.connect(process.env.MONGO_URL)
+    }
+    let itms = await postitem.findOne({ slug: slug });
+    const rltdItms = itms.catogery
+    let rleateItem = await postitem.find({ catogery: rltdItms })
+    let moreStory = await postitem.find()
+    return {
+        props: {
+            itms: JSON.parse(JSON.stringify(itms)),
+            rleateItem: JSON.parse(JSON.stringify(rleateItem)),
+            moreStory: JSON.parse(JSON.stringify(moreStory)),
+        },
+    };
+};
+export const getStaticPaths = async () => {
+
+    if (!mongoose.connections[0].readyState) {
+        await mongoose.connect(process.env.MONGO_URL)
+    }
+    let data = await postitem.find();
+    const paths = data.map((curEle) => ({ params: { slug: curEle.slug.toString() } }));
+    return {
+        paths,
+        fallback: false,
+    };
+};
 export default Slug

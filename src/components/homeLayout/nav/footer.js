@@ -1,5 +1,4 @@
 import {React, useState, useEffect } from 'react'
-import Link from 'next/link'
 import  {useRouter}  from "next/router";
 
 function Footer() {
@@ -46,26 +45,26 @@ function Footer() {
                 <a style={{ cursor: "pointer" }} onClick={() => router.push("/author/About")}> <i className="fas fa-arrow-right"></i> About Us </a>
                 <a style={{ cursor: "pointer" }} onClick={() => router.push("/author/contact")}> <i className="fas fa-arrow-right"></i> Contact Us</a>
                 <a style={{ cursor: "pointer" }} onClick={() => router.push("/author/servicess")}> <i className="fas fa-arrow-right"></i>Our serivces</a>
-                <a style={{ cursor: "pointer" }} onClick={() => router.push("/author/contactForBay")}> <i className="fas fa-arrow-right"></i> Buy Books </a>
+                <a rel="noopener noreferrer" target="_blank" href= {process.env.NEXT_PUBLIC_CHAT_URL}> <i className="fas fa-arrow-right"></i> Buy Books </a>
 
               </div>
 
               <div className="box">
                 <h3>contact info</h3>
-                <a > <i className="fas fa-phone"></i> +123-456-7890 </a>
-                <a > <i className="fas fa-phone"></i> +111-222-3333 </a>
-                <a > <i className="fas fa-envelope"></i> shaikhanas@gmail.com </a>
+                <a > <i className="fas fa-phone"></i> +91 99994 42714 </a>
+                <a > <i className="fas fa-phone"></i> +91 74XXXXXX17 </a>
+                <a > <i className="fas fa-envelope"></i> Shree.Helps@gmail.com </a>
                 <img src="../image/worldmap.png" className="map" alt="" />
               </div>
 
             </div>
 
             <div className="share">
-              <a  className="fab fa-facebook-f"></a>
-              <a className="fab fa-twitter"></a>
-              <a  className="fab fa-instagram"></a>
-              <a  className="fab fa-linkedin"></a>
-              <a className="fab fa-pinterest"></a>
+              <a rel="noopener noreferrer" target="_blank" href= {process.env.NEXT_PUBLIC_FAB_URL} className="fab fa-facebook-f"></a>
+              <a rel="noopener noreferrer" target="_blank" href= {process.env.NEXT_PUBLIC_TWITER_URL} className="fab fa-twitter"></a>
+              <a rel="noopener noreferrer" target="_blank" href= {process.env.NEXT_PUBLIC_INSTA_URL } className="fab fa-instagram"></a>
+              <a rel="noopener noreferrer" target="_blank" href= {process.env.NEXT_PUBLIC_LINKDIN_URL } className="fab fa-linkedin"></a>
+              <a rel="noopener noreferrer" target="_blank" href= {process.env.NEXT_PUBLIC_CHAT_URL} className="fab fa-whatsapp"></a>
             </div>
 
             <div className="credit"> created by <span><a href=" https://sonu1994roy.github.io/sonumyportfolio.github.io/" rel="noopener noreferrer" target="_blank">mr. Sonu</a></span> | all rights reserved!<span> Shree.</span> </div>
@@ -78,7 +77,7 @@ function Footer() {
       {/* -- footer section ends -- */}
       <div className="whatsaap-chat ">
         <button   className="btn btn-primary share " title="Chat on WhatsApp" >
-        <a rel="noopener noreferrer" target="_blank" href="https://wa.me/917428271817?text=I'm%20interested%20in%20your%20Books%20for%20Buy"className="fab fa-whatsapp"></a>
+        <a rel="noopener noreferrer" target="_blank" href= {process.env.NEXT_PUBLIC_CHAT_URL} className="fab fa-whatsapp"></a>
         </button>
       </div>
       

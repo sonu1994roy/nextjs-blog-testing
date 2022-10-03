@@ -34,8 +34,12 @@ export default function Index(props) {
 
   if (items.length === 0) {
     return (
-      <Grid container spacing={0}>
-        <Grid item xs={12} lg={12}>
+      <ThemeProvider theme={theme}>
+      <FullLayout>
+      <Grid container  spacing={0}>
+          <Grid item xs={12} lg={12}>
+
+              <BaseCard title="Subscriber Email">
         <div className="card-body" >
           <h2>there are no story persent please Add  a new sotry </h2>
          
@@ -44,8 +48,15 @@ export default function Index(props) {
             </Button>
 
           </div>
-        </Grid>
-      </Grid>
+          </BaseCard>
+                            
+                            </Grid>
+                          
+                        </Grid>
+                      
+                    </FullLayout>
+    </ThemeProvider>
+   
     )
   }
   return (

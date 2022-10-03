@@ -47,7 +47,7 @@ const Nav = () => {
     const [dataSerch, setdataSerch] = useState([])
     useEffect(() => {
         const getItems = async () => {
-            const res = await fetch(`http://localhost:3000/api/getitem`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/getitem`)
             const data = await res.json()
             setserch(data.itms)
         };
@@ -160,39 +160,39 @@ const Nav = () => {
 
 
                 {IsOpen && <div id="navbarSupportedContent">
-                    <nav key={Math.random()} className="navbar-nav mr-auto align-items-center" >
+                    <nav key={Math.random()} className="navbar-nav list-group mr-auto align-items-center" >
                         <Link href="/" className="nav-item">
-                            <a className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Home
                             </a>
                         </Link>
                         <Link href="/series/books" passHref className="nav-item">
-                            <a className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Books
                             </a>
                         </Link>
                         <Link href="/series/f_story" className="nav-item">
-                            <a className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Story
                             </a>
                         </Link>
                         <Link href="/series/poeam" className="nav-item">
-                            <a className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Poem
                             </a>
                         </Link>
                         <Link href="/author/About" className="nav-item">
-                            <a className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 About Us
                             </a>
                         </Link>
                         <Link href="/author/servicess" className="nav-item">
-                            <a className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Servicess
                             </a>
                         </Link>
                         <Link href="/author/contact" className="nav-item">
-                            <a className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Contact Us
                             </a>
                         </Link>
@@ -221,8 +221,8 @@ const Nav = () => {
  
             <nav className="bottom-navbar">
                 <a style={{ cursor: "pointer" }} onClick={() => router.push("/")} className="fas fa-home"></a>
-                <a style={{ cursor: "pointer" }} onClick={() => router.push("/series/books")} className="fas fa-tags"></a>
-                <a style={{ cursor: "pointer" }} onClick={() => router.push("/series/f_story")} className="fas fa-comments"></a>
+                <a style={{ cursor: "pointer" }} onClick={() => router.push("/series/books")} className="fas fa-book"></a>
+                <a style={{ cursor: "pointer" }} onClick={() => router.push("/series/f_story")} className="fas fa-story"></a>
                 <a style={{ cursor: "pointer" }} onClick={() => router.push("/series/poeam")} className="fas fa-blog"></a>
             </nav>
         </>

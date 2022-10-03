@@ -78,8 +78,8 @@ function Contact() {
 
                                                 <li className="mb-3">3 वेबसाइट पर अधिक जानकारी के लिए कृपया पहले हमारा सोइसल लिंक पेज देखें।</li>
                                                 <li className="mb-3">
-                                                    <a  className="text-color h5 d-block">+91 7428271817</a>
-                                                    <a  className="mb-5 text-color h5 d-block">yourmail@emailcom</a>
+                                                    <p  className="text-color h5 d-block">+91 7428271817</p>
+                                                    <p className="mb-5 text-color h5 d-block">yourmail@emailcom</p>
                                                     <p>Punchsheel Hynish<br />Sector-1 Noida Extension</p>
                                                 </li>
                                             </ul>

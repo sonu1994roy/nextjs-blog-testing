@@ -31,7 +31,6 @@ export default Auth( async (req, res) => {
         case 'GET':
             try {
                 const task = await items.findById(id);
-                console.log(task);
                 if (!task) return res.status(404).json({ error: 'itms dose not exsits' })
                 // await runMiddlleware(req, res);
                 return res.status(200).json(task)
@@ -60,7 +59,7 @@ export default Auth( async (req, res) => {
                         new:true,
                         runValidators:true
                     });
-                    console.log(updatedTask);
+                   
                     if (!updatedTask){
                         return res.status(404).json({ error: 'itms dose not exsits' })
                     }

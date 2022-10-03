@@ -120,7 +120,7 @@ export default function Home(props) {
     }
     const SubscribeUsered = async () => {
         try {
-            const userSbscrib = await fetch(`http://localhost:3000/api/subscribe`, {
+            const userSbscrib = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/subscribe`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
