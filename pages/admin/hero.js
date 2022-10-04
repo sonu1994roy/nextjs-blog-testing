@@ -63,7 +63,7 @@ export default function Acount(props) {
   }
   // const UpdateUser = async () => {some cahnege 
   //   try {
-  //     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/user`, {
+  //     const res = await fetch(`/api/user`, {
   //       method: 'POST',
   //       headers: {
   //         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export default function Acount(props) {
  
   const UpdateUser = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/profile`, {
+      const res = await fetch(`/api/profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -176,7 +176,7 @@ const handleSubmit1 = async () => {
 }
 const UpdatePassword = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/changePassW`, {
+    const res = await fetch(`/api/changePassW`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

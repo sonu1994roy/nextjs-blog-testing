@@ -10,11 +10,11 @@ npm run dev
 yarn dev
 ```
 
-Open [${process.env.NEXT_PUBLIC_HOST_BASE_URL }](${process.env.NEXT_PUBLIC_HOST_BASE_URL }) with your browser to see the result.
+Open []() with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/hello](${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [/api/hello](/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 

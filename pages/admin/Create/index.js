@@ -42,7 +42,7 @@ export default function Create() {
 
 
     const getItems = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/creatAPI/${query.id}`, {
+        const res = await fetch(`/api/creatAPI/${query.id}`, {
             headers: {
                 "Authorization":token
               },}
@@ -98,7 +98,7 @@ export default function Create() {
     }
     const updateItem = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/creatAPI/${query.id}`, {
+            const res = await fetch(`/api/creatAPI/${query.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ export default function Create() {
 
     const NewItem = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/creatAPI`, {
+            const res = await fetch(`/api/creatAPI`, {
                 method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ const Delate = ({ items, token }) => {
     const delateItem = async () => {
         const { id } = query
         try {
-          const res =  await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/creatAPI/${id}`, {
+          const res =  await fetch(`/api/creatAPI/${id}`, {
                 method: 'DELETE',
                 headers: {
                   "Authorization":token
@@ -124,7 +124,7 @@ export async function getServerSideProps(ctx) {
         res.writeHead(302,{Location:"/athouticate"})
         res.end()
     }
-    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/creatAPI/${id}`,{
+    const res = await fetch(`/api/creatAPI/${id}`,{
     headers: {
         "Authorization":token
       },});

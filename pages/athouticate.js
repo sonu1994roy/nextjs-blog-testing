@@ -22,7 +22,7 @@ function Adminlogin() {
       userid,
       password
     }
-    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/admin`, {
+    const res = await fetch(`/api/admin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

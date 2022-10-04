@@ -47,7 +47,7 @@ const Nav = () => {
     const [dataSerch, setdataSerch] = useState([])
     useEffect(() => {
         const getItems = async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/getitem`)
+            const res = await fetch(`/api/getitem`)
             const data = await res.json()
             setserch(data.itms)
         };
@@ -160,41 +160,41 @@ const Nav = () => {
 
 
                 {IsOpen && <div id="navbarSupportedContent">
-                    <nav key={Math.random()} className="navbar-nav list-group mr-auto align-items-center" >
+                    <nav key={Math.random()} className="navbar-nav  mr-auto align-items-center" >
                         <Link href="/" className="nav-item">
-                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h1> <a className="nav-link " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Home
-                            </a>
+                            </a></h1>
                         </Link>
                         <Link href="/series/books" passHref className="nav-item">
-                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h1>  <a className="nav-link " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Books
-                            </a>
+                            </a></h1>
                         </Link>
                         <Link href="/series/f_story" className="nav-item">
-                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h1>  <a className="nav-link " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Story
-                            </a>
+                            </a></h1>
                         </Link>
                         <Link href="/series/poeam" className="nav-item">
-                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h1> <a className="nav-link " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Poem
-                            </a>
+                            </a></h1>
                         </Link>
                         <Link href="/author/About" className="nav-item">
-                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h1>  <a className="nav-link " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 About Us
-                            </a>
+                            </a></h1>
                         </Link>
                         <Link href="/author/servicess" className="nav-item">
-                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h1> <a className="nav-link " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Servicess
-                            </a>
+                            </a></h1>
                         </Link>
                         <Link href="/author/contact" className="nav-item">
-                            <a className="nav-link list-group-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <h1> <a className="nav-link " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Contact Us
-                            </a>
+                            </a></h1>
                         </Link>
 
                     </nav>

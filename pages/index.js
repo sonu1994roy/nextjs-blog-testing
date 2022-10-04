@@ -120,7 +120,7 @@ export default function Home(props) {
     }
     const SubscribeUsered = async () => {
         try {
-            const userSbscrib = await fetch(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/api/subscribe`, {
+            const userSbscrib = await fetch(`/api/subscribe`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -389,7 +389,7 @@ export default function Home(props) {
                         <div className="content">
                             <h3>deal of the day</h3>
                             <h1>@ Hurry Up...</h1>
-                            <p>यहाँ दी गई कहानियाँ, नाटक और कविताएँ विषय सामग्री जैसे कि किताब देखने या ख़रीदने के लिए दिए गए लेकिन @Shop Now पर  क्लिक करे..</p>
+                            <p>यहाँ दी गई कहानियाँ, नाटक और कविताएँ विषय सामग्री जैसे कि किताब देखने या ख़रीदने के लिए दिए गए Link @Shop Now पर  क्लिक करे..</p>
                             <Link href="/series/books" passHref>
                             <a  className="btn">shop now</a></Link>
                         </div>
