@@ -8,7 +8,12 @@ const Share = (props) => {
  
          
     const [Copied, setCopied] = useState(false)
+<<<<<<< HEAD
     const [url, seturl] = useState(`${process.env.NEXT_PUBLIC_HOST_BASE_URL }/series/${props.link}`)
+=======
+    const [url, seturl] = useState(`/series/${props.link}`)
+
+>>>>>>> 993a113fa91fa3b2cb2f2618becaff6d80f5b101
     
     return (
         <div>
