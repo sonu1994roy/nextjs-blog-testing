@@ -9,7 +9,7 @@ const Share = (props) => {
          
     const [Copied, setCopied] = useState(false)
     const [url, seturl] = useState(`/series/${props.link}`)
-cosole.log()
+
     
     return (
         <div>
