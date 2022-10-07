@@ -395,7 +395,7 @@ export default function Home(props) {
                         </div>
 
                         <div className="image">
-                            <img src="image/deal-img.jpg" alt="" />
+                            <img src="image/deal-img-4.png" alt="" />
                         </div>
 
                     </section>
