@@ -59,7 +59,7 @@ function Slug(props, errors) {
                                     संबंधित पोस्ट
                                 </h3>
                                 <div className="news-style-two-slide arrivals-slider">
-                                    <div className="" style={{ width: "55%" }}>
+                                    <div className="" style={{ width: "65%" }}>
                                         {rleateItem.reverse().slice(0, 7).map((data) => {
 
                                             return (
@@ -232,7 +232,7 @@ function Slug(props, errors) {
                                                         <div className="post-thumbnail mb-0">
 
                                                             <a rel="noopener noreferrer" href={`/series/${data.slug}`}>
-                                                                <img className="img-fluid " style={{ width: "12rem ", height: "10rem" }} src={data.img} alt="post-thumbnail" />
+                                                                <img className="img-fluid " style={{ width: "13rem ", height: "10rem" }} src={data.img} alt="post-thumbnail" />
                                                             </a>
 
                                                         </div>
@@ -270,27 +270,8 @@ function Slug(props, errors) {
     }
 
 }
-// export async function getServerSideProps(context) {
-//     const { slug } = context.query
-//     if (!mongoose.connections[0].readyState) {
-//         await mongoose.connect(process.env.MONGO_URL)
-//     }
-//     let itms = await postitem.findOne({ slug: slug });
-//     const rltdItms = itms.catogery
-//     let rleateItem = await postitem.find({ catogery: rltdItms })
-//     let moreStory = await postitem.find()
-//     return {
-//         props: {
-//             itms: JSON.parse(JSON.stringify(itms)),
-//             rleateItem: JSON.parse(JSON.stringify(rleateItem)),
-//             moreStory: JSON.parse(JSON.stringify(moreStory)),
-//         },
-//         // will be passed to the page component as props
-//     }
-// }
-
-export const getStaticProps = async (context) => {
-    const { slug } = context.params
+export async function getServerSideProps(context) {
+    const { slug } = context.query
     if (!mongoose.connections[0].readyState) {
         await mongoose.connect(process.env.MONGO_URL)
     }
@@ -304,18 +285,37 @@ export const getStaticProps = async (context) => {
             rleateItem: JSON.parse(JSON.stringify(rleateItem)),
             moreStory: JSON.parse(JSON.stringify(moreStory)),
         },
-    };
-};
-export const getStaticPaths = async () => {
-
-    if (!mongoose.connections[0].readyState) {
-        await mongoose.connect(process.env.MONGO_URL)
+        // will be passed to the page component as props
     }
-    let data = await postitem.find();
-    const paths = data.map((curEle) => ({ params: { slug: curEle.slug.toString() } }));
-    return {
-        paths,
-        fallback: false,
-    };
-};
+}
+
+// export const getStaticProps = async (context) => {
+//     const { slug } = context.params
+//     if (!mongoose.connections[0].readyState) {
+//         await mongoose.connect(process.env.MONGO_URL)
+//     }
+//     let itms = await postitem.findOne({ slug: slug });
+//     const rltdItms = itms.catogery
+//     let rleateItem = await postitem.find({ catogery: rltdItms })
+//     let moreStory = await postitem.find()
+//     return {
+//         props: {
+//             itms: JSON.parse(JSON.stringify(itms)),
+//             rleateItem: JSON.parse(JSON.stringify(rleateItem)),
+//             moreStory: JSON.parse(JSON.stringify(moreStory)),
+//         },
+//     };
+// };
+// export const getStaticPaths = async () => {
+
+//     if (!mongoose.connections[0].readyState) {
+//         await mongoose.connect(process.env.MONGO_URL)
+//     }
+//     let data = await postitem.find();
+//     const paths = data.map((curEle) => ({ params: { slug: curEle.slug.toString() } }));
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// };
 export default Slug
